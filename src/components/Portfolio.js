@@ -14,6 +14,8 @@ export const Portfolio = () => (
       <ul className="square">
         {[
           <span>Lightform <a href='https://lightform.com'>E-commerce/Showcase Site</a></span>,
+          <span>BGRoll Mobile: React-Native Mobile Application</span>,
+          <span>Guidings Mobile: Native Android Application</span>,
           <span>Pablo Designs <a href='https://pablodesigns.com'>E-commerce/Showcase Site</a></span>,
           <span>moment (Grio Internal Time tracking software [angularjs, rails, mysql])</span>,
           <span>Ewoolutions static concept site <a href='https://protected-plains-5382.herokuapp.com/'>Ewoolutions</a></span>,
@@ -119,7 +121,11 @@ export const Portfolio = () => (
         <a className="popup-modal-dismiss">Close</a>
       </div>
     </div>{/* modal-01 End */}
+    <p className="scrolldown">
+      <a className="smoothscroll" href="#contact"><i className="icon-down-circle" /></a>
+    </p>
   </div> {/* row End */}
+
 </section>
 );
 

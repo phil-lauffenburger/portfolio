@@ -1,20 +1,17 @@
 import React from 'react';
 
-export const About = ({ me }) => (
-  <section id="about">
-  <div className="row">
-    <div className="three columns">
-      <img className="profile-pic" src="images/phil.png" alt />
-    </div>
-    <div className="nine columns main-col">
-      <h2>About Me</h2>
-      <p>Hey. I'm glad you're still reading.
-      Who am I? I am very few things: 1) Developer; 2) Climber; 3) Explorer. At the end of the day though, what matters is that no matter the job, requirements,
-      or tools handed to me, I get the job done. I bring a broad swathe of technical skills to the table, without compromising on depth. Get in contact with me about your tough job.
-      <br/><a className="smoothscroll" href="#contact">Let's Talk</a>
-      </p>
+export class About extends React.Component{
+  state = {showImg: false}
+  render() {
+    const { me } = this.props;
+    const {showImg} = this.state;
+    return (
+      <section id="about">
       <div className="row">
-        <div className="columns contact-details">
+        <div className="three columns">
+          <div className="profile-pic" />
+        </div>
+        <div className="three columns contact-details">
           <h2>Contact Details</h2>
           <p className="address">
             <span>{me.first} {me.last}</span><br />
@@ -25,15 +22,43 @@ export const About = ({ me }) => (
             <span>{me.email}</span>
           </p>
         </div>
-        <div className="columns download">
-          <p>
-            <a href="#" className="button"><i className="fa fa-download" />Download Resume</a>
+        <div className="six columns main-col">
+          <h2>About Me</h2>
+          <div className="follow-mountain"/>
+          <ul>
+            <li><a href="#resume">Developer</a></li>
+            <li onClick = {() => this.setState({ showImg: !showImg })}><a>Climber</a></li>
+          </ul>
+          <br/><a className="smoothscroll" href="#contact">Let's Talk</a>
+          <p className="text-right" style={{pointerEvents: 'none'}}>
+              I am an American living in Innsbruck with my wonderful Norwegian wife. I feel as though I have found paradise. I like finding interesting problems and solving them whether in my personal or professional life.
+              This translates easily to both web development problems, as well as rock climbing. I believe in challenging myself every day.
           </p>
         </div>
-      </div> {/* end row */}
-    </div> {/* end .main-col */}
-  </div>
-</section>
-);
+
+        </div> {/* end .main-col */}
+        <p className="scrolldown">
+          <a className="smoothscroll" href="#resume"><i className="icon-down-circle" /></a>
+        </p>
+    </section>
+    )
+  }
+}
+
+// <div className="row">
+//
+//   <div className="columns download">
+//     <p>
+//       <a href="#" className="button"><i className="fa fa-download" />Download Resume</a>
+//     </p>
+//   </div>
+// </div> {/* end row */}
+
+// <div id="modal-09" className={`popup-modal ${showImg ? '' : "mfp-hide"}`} height="550px">
+//   <img className="scale-with-grid" src="images/climbing.jpg" alt />
+//   <div className="link-box">
+//     <a className="popup-modal-dismiss" onClick={() => this.setState({ showImg: false })}>Close</a>
+//   </div>
+// </div>{/* modal-03 End */}
 
 export default About;

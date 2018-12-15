@@ -1,6 +1,6 @@
 import React from 'react';
 import PortfolioItem from './PortfolioItem';
-import { randomMotion, createInitialGrid } from '../js/randomMotion'
+import { displace, getInitialDisplacePos } from '../js/displace'
 
 const ele = [
   {
@@ -53,6 +53,9 @@ const ele = [
   }
 ];
 
+const keys = ele.map(({key}) => key);
+
+// will all return 0 for now
 const returnPositions = elementPos => {
   let keyMap = {};
   ele.forEach(({key}) =>( keyMap[key] = {i : 0, j: 0}))
@@ -67,13 +70,13 @@ const returnPositions = elementPos => {
   return keyMap;
 }
 
-const initial = createInitialGrid(ele.map(({key}) => key));
+const initial = getInitialDisplacePos({ keys });
 
 export class PortfolioPlayground extends React.Component {
   state = {
     initialGrid: initial,
     initialKeyMap: returnPositions(initial),
-    shift: false
+    shift: true
   }
 
   componentDidMount() {
@@ -81,45 +84,46 @@ export class PortfolioPlayground extends React.Component {
   }
 
   makeMotion(initial) {
-    let { elementPos, elementXMotion, elementYMotion, shift } = this.state;
-    ({ elementPos, elementXMotion, elementYMotion } = randomMotion({elementPos: elementPos || initial, elementXMotion, elementYMotion}));
+    let { elementPos, shift } = this.state;
     if (shift) {
-      this.setState({ elementPos, elementXMotion, elementYMotion }, () => setTimeout(() => this.makeMotion(), 500))
+      ({ elementPos } = displace({elementPos: elementPos || initial, keys }));
+      this.setState({ elementPos },() => this.timer = setTimeout(() => this.makeMotion(), 5000))
     } else {
-      this.setState({ elementPos });
+      clearTimeout(this.timer);
     }
   }
 
-  toggleShifting() {
-    this.setState({ shift: !this.state.shift}, () => {
+  toggleShifting(val) {
+    this.setState({ shift: val}, () => {
       if (this.state.shift) {
-        this.makeMotion();
+        this.timer = setTimeout(() => this.makeMotion(), 5000)
       } else {
-        this.setState({ elementPos: this.state.initialGrid, elementXMotion: null, elementYMotion: null });
+        clearTimeout(this.timer);
       }
     })
   }
 
   render() {
-    const { elementPos, initialKeyMap, shift } = this.state;
+    const { elementPos, initialKeyMap } = this.state;
     if (!elementPos) return null;
-
-    const keyMap = returnPositions(elementPos);
     return (
       <div className="twelve columns collapsed">
       <div id="portfolio-wrapper" className="bgrid-quarters s-bgrid-thirds cf">
         <h1>Take a gander at a few of my previous projects</h1>
-        <div className="twelve column centered cf">
-        <button className="start-stop-btn button" onClick={() => this.toggleShifting()}>
-            <h4 className="muted " >({shift ? 'Stop' : 'Start'} the drifting)</h4></button>
+          {ele.map((item, index) =>
+            <div
+              key={item.key}
+              onMouseEnter={() => this.toggleShifting(false)}
+              onMouseLeave={() => this.toggleShifting(true)}
+            >
+              <PortfolioItem
+                {...item}
+                index={index + 1}
+                xTransform={elementPos[item.key].xTransform - initialKeyMap[item.key].i}
+                yTransform={elementPos[item.key].yTransform - initialKeyMap[item.key].j}
+              />
             </div>
-        {ele.map((item, index) =>
-          <PortfolioItem
-            {...item}
-            index={index + 1}
-            xTransform={keyMap[item.key].i - initialKeyMap[item.key].i}
-            yTransform={keyMap[item.key].j - initialKeyMap[item.key].j}
-          />)}
+            )}
           </div> {/* twelve columns end */}
 
       </div>

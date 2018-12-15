@@ -41,7 +41,7 @@ export const Resume = () => (
           <h3>Manufacturing Engineer/Production Floor Manager</h3>
           <p className="info">SNC & LHDC <span>•</span> <em className="date">May 2011 - July 2016</em></p>
           <p>
-            I hurled expensive pieces of metal into orbit. It was complicated. However, it was ultimately unsatisfying creatively, and didn't give me the flexibility I crave.
+            I directed manufacturing <span className="highlight">satellite components.</span> It was complicated. However, it was ultimately unsatisfying <span className="highlight">creatively</span>, and didn't give me the <span className="highlight">flexibility</span> I crave.
           </p>
         </div>
       </div> {/* item end */}
@@ -138,7 +138,11 @@ export const Resume = () => (
         </ul>
       </div>
     </div> {/* main-col end */}
+    <p className="scrolldown">
+      <a className="smoothscroll" href="#portfolio"><i className="icon-down-circle" /></a>
+    </p>
   </div> {/* End skills */}
+
 </section>
  );
 

@@ -10,13 +10,12 @@ import './App.css';
 
 import data from './data';
 const components = [
-  <Header />,
-  <About />,
-  <Resume />,
-  <Portfolio />,
-  // <Testimonials />,
-  <ContactUs />,
-  <Footer />,
+  <Header  key="header"/>,
+  <About key="about" />,
+  <Resume key="resume" />,
+  <Portfolio key="portfolio" />,
+  <ContactUs key="contactus"/>,
+  <Footer key="footer"/>,
 ];
 
 const props = { ...data }

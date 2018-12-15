@@ -31,7 +31,6 @@
 /* ------------------------------------------------------------------ */
 
 body { background: #0f0f0f; }
-span.highlight { color: var(--dark-rock);}
 /* ------------------------------------------------------------------ */
 /* b. Header Styles
 /* ------------------------------------------------------------------ */
@@ -41,7 +40,7 @@ header {
    height: 800px;
    min-height: 500px;
    width: 100%;
-   background: #161415 url(../images/header-background_2.jpg) no-repeat bottom center;
+   background: #161415 url(../images/header_back.jpg) no-repeat bottom center;
    background-size: cover !important;
 	-webkit-background-size: cover !important;
    text-align: center;
@@ -104,28 +103,6 @@ header .social li {
 }
 header .social li a { color: #fff; }
 header .social li a:hover { color: #11ABB0; }
-
-/* scrolldown link */
-header .scrolldown a {
-   position: absolute;
-   bottom: 30px;
-   left: 50%;
-   margin-left: -29px;
-   color: #fff;
-   display: block;
-   height: 42px;
-   width: 42px;
-   font-size: 42px;
-   line-height: 42px;
-   color: #fff;
-   border-radius: 100%;
-
-   -webkit-transition: all .3s ease-in-out;
-   -moz-transition: all .3s ease-in-out;
-   -o-transition: all .3s ease-in-out;
-   transition: all .3s ease-in-out;
-}
-header .scrolldown a:hover { color: #11ABB0; }
 
 /* primary navigation
 --------------------------------------------------------------------- */
@@ -199,31 +176,42 @@ ul#nav li.current a { color: #F06000; }
 /* ------------------------------------------------------------------ */
 
 #about {
-   background: #2B2B2B;
+    background: #2B2B2B url(../images/about_me.jpg) no-repeat center 27%;
    padding-top: 96px;
-   padding-bottom: 66px;
    overflow: hidden;
+   height: 100vh;
+   background-size: cover;
 }
 
-#about a, #about a:visited  { color: #fff; }
+#about a, #about a:visited  { color: var(--red-rock); }
 #about a:hover, #about a:focus { color: #11ABB0; }
 
 #about h2 {
    font: 22px/30px 'opensans-bold', sans-serif;
-   color: #fff;
+   color: var(--sky);
    margin-bottom: 12px;
 }
 #about p {
    line-height: 30px;
-   color: #7A7A7A;
+   color: var(--dark-rock);;
 }
 #about .profile-pic {
+    background-image: url(../images/phil_2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
    position: relative;
    width: 120px;
    height: 120px;
    border-radius: 100%;
+   transition: filter 1s;
+   filter: grayscale(100%);
 }
-#about .contact-details { width: 41.66667%; }
+
+#about .profile-pic:hover {
+    filter: grayscale(0);
+}
 #about .download {
    width: 58.33333%;
    padding-top: 6px;
@@ -231,6 +219,7 @@ ul#nav li.current a { color: #F06000; }
 #about .main-col { padding-right: 5%; }
 #about .download .button {
    margin-top: 6px;
+   color: var(--dark-rock);
    background: #444;
 }
 #about .download .button:hover {
@@ -412,7 +401,6 @@ ul#nav li.current a { color: #F06000; }
 }
 
 /* Portfolio Content */
-#portfolio-wrapper .columns { margin-bottom: 36px; }
 .portfolio-item .item-wrap {
    background: #fff;
    overflow: hidden;
@@ -440,19 +428,6 @@ ul#nav li.current a { color: #F06000; }
   box-shadow: 0 7px 14px rgba(0,0,0,0.5), 0 5px 5px rgba(0,0,0,0.4);
 }
 
-.portfolio-item {
-  transition: all 500ms linear;
-  -webkit-font-smoothing: subpixel-antialiased;
-  -webkit-backface-visibility: hidden;
-  font-smoothing: antialiased !important;
-  -webkit-transform: translateZ(0) scale(1.0, 1.0);
-  transform: scale(2);
-  zoom: 0.5;
-}
-
-.portfolio-item.in-motion {
-  filter: blur(1px);
-}
 
 .portfolio-item .item-wrap a {
    display: block;
