@@ -33,7 +33,7 @@
 
 .follow-mountain {
   float: left;
-  shape-outside: polygon(0 100px, 0 600px, 0 600px);
+  shape-outside: polygon(0 100px, 0 600px, 450px 600px);
   width: 50vw;
   height: 600px;
   transition: shape-outside 1s linear;
@@ -41,7 +41,7 @@
 }
 
 .follow-mountain:hover {
-  shape-outside: polygon(0 100px, 0 600px, 400px 600px);
+  /* shape-outside: polygon(0 100px, 0 600px, 400px 600px); */
 }
 
 span.highlight {
@@ -99,4 +99,39 @@ span.highlight:hover {
    -o-transition: all .3s ease-in-out;
    transition: all .3s ease-in-out;
 }
+
+#about .main-col p {
+ transition: opacity .5s linear;
+}
+
+#about p.text-right {
+  pointer-events: none;
+  margin-bottom: 3px;
+}
+
+#about .contact-details p{
+  mix-blend-mode: difference;
+  background-color: rgba(255,255,255,.6);
+  transition: all .5s ease-in;
+}
+
+#about .contact-details p:hover{
+  background-color: rgba(255,255,255,1);
+
+}
+
+
+.hidden {
+  opacity: 0;
+}
+
+.trigger {
+  position: absolute;
+}
+
+.trigger .hide {
+  opacity: 0;
+}
+
+
 .scrolldown a i:hover { color: var(--star); }

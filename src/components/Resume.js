@@ -41,7 +41,7 @@ export const Resume = () => (
           <h3>Manufacturing Engineer/Production Floor Manager</h3>
           <p className="info">SNC & LHDC <span>•</span> <em className="date">May 2011 - July 2016</em></p>
           <p>
-            I directed manufacturing <span className="highlight">satellite components.</span> It was complicated. However, it was ultimately unsatisfying <span className="highlight">creatively</span>, and didn't give me the <span className="highlight">flexibility</span> I crave.
+            I oversaw and planned the production of <span className="highlight">satellite components.</span> It was complicated. However, it was ultimately unsatisfying <span className="highlight">creatively</span>, and didn't give me the <span className="highlight">flexibility</span> I crave.
           </p>
         </div>
       </div> {/* item end */}
@@ -56,7 +56,7 @@ export const Resume = () => (
       </div> {/* item end */}
       <div className="row item">
         <div className="twelve columns">
-          <h3>Full Stack Web Developer</h3>
+          <h3>Full Stack Contractor</h3>
           <p className="info">Grio<span>•</span> <em className="date">May 2017 - Present</em></p>
           <p>
             Grio is an awesome place to work. I've been on at least six different projects, each with their own client and technical challenge.
@@ -117,7 +117,7 @@ export const Resume = () => (
               skill: 25
             }
           ].sort((a,b) => a.skill > b.skill ? -1 : 1)
-          .map(e => <SkillBar {...e} />)}
+          .map((e, i) => <SkillBar key={i} {...e}/>)}
         </ul>
       </div>{/* end skill-bars */}
       <div className="additional">
@@ -134,13 +134,10 @@ export const Resume = () => (
             "Google Maps API",
             "chartjs",
             "Firebase"
-          ].map(e => <li className="pull-left first">{e}</li>)}
+          ].map(e => <li className="pull-left first" key={e}>{e}</li>)}
         </ul>
       </div>
     </div> {/* main-col end */}
-    <p className="scrolldown">
-      <a className="smoothscroll" href="#portfolio"><i className="icon-down-circle" /></a>
-    </p>
   </div> {/* End skills */}
 
 </section>

@@ -3,7 +3,7 @@ const me = {
   firstshort: 'Phil',
   last: 'Lauffenburger',
   email: 'lauffenp@gmail.com',
-  role: 'Full Stack Contracting Developer',
+  role: 'Full Stack Web Developer',
   imageUrl: '',
   address: 'Hormayrstraße 19, Top 11',
   address2: 'Innsbruck AT, 6020',

@@ -1,10 +1,20 @@
 import React from 'react';
 
+// <p className="address">
+//   <span>{me.first} {me.last}</span><br />
+//   <span>{me.address}<br />
+//     {me.address2}
+//   </span><br />
+//   <span>{me.phone}</span><br />
+//   <span>{me.email}</span>
+// </p>
+
 export class About extends React.Component{
-  state = {showImg: false}
+  state = {showGerman: false}
+
   render() {
     const { me } = this.props;
-    const {showImg} = this.state;
+    const {showGerman} = this.state;
     return (
       <section id="about">
       <div className="row">
@@ -12,53 +22,55 @@ export class About extends React.Component{
           <div className="profile-pic" />
         </div>
         <div className="three columns contact-details">
-          <h2>Contact Details</h2>
-          <p className="address">
-            <span>{me.first} {me.last}</span><br />
-            <span>{me.address}<br />
-              {me.address2}
-            </span><br />
-            <span>{me.phone}</span><br />
-            <span>{me.email}</span>
-          </p>
+
         </div>
         <div className="six columns main-col">
           <h2>About Me</h2>
           <div className="follow-mountain"/>
-          <ul>
-            <li><a href="#resume">Developer</a></li>
-            <li onClick = {() => this.setState({ showImg: !showImg })}><a>Climber</a></li>
-          </ul>
-          <br/><a className="smoothscroll" href="#contact">Let's Talk</a>
-          <p className="text-right" style={{pointerEvents: 'none'}}>
-              I am an American living in Innsbruck with my wonderful Norwegian wife. I feel as though I have found paradise. I like finding interesting problems and solving them whether in my personal or professional life.
-              This translates easily to both web development problems, as well as rock climbing. I believe in challenging myself every day.
+          <br/><a
+          className="smoothscroll text-right" href="#contact"
+          onMouseEnter = {() => this.setState({ showGerman: true })}
+          onMouseLeave = {() => this.setState({ showGerman: false })}
+          >{showGerman ? 'Lass uns reden' : "Let's Talk"}</a>
+
+          <div
+            className="trigger"
+            onMouseEnter = {() => this.setState({ showGerman: true })}
+            onMouseLeave = {() => this.setState({ showGerman: false })}
+          >
+
+                          <p className="hide">
+                            I'm a web developer. I'm a rock climber. I live in Innsbruck. I can work, and have worked, with teams around the world.
+                            <br/> I <i className="fa fa-heart"/> full stack web development.
+                            <br/>I want to know about your unique problem.
+                        </p>
+
+                        <p className="hide">
+                          Ich bin ein Webentwickler. Ich bin ein Kletterer. Ich wohne in Innsbruck. Ich kann mit Teams auf der ganzen Welt zusammenarbeiten.
+                          <br/> Ich <i className="fa fa-heart"/> komplette Webentwicklung.
+                          <br/>Ich möchte über Ihr Problem Bescheid wissen.
+
+                        </p>
+          </div>
+            <p className={`text-right ${showGerman ? 'hidden' : ''}`}>
+              I'm a web developer. I'm a rock climber. I live in Innsbruck. I can work, and have worked, with teams around the world.
+              <br/> I <i className="fa fa-heart"/> full stack web development.
+              <br/>I want to know about your unique problem.
+
+          </p>
+
+          <p className={`text-right ${showGerman ? '' : 'hidden'}`}>
+            Ich bin ein Webentwickler. Ich bin ein Kletterer. Ich wohne in Innsbruck. Ich kann mit Teams auf der ganzen Welt zusammenarbeiten.
+            <br/> Ich <i className="fa fa-heart"/> komplette Webentwicklung.
+            <br/>Ich möchte über Ihr Problem Bescheid wissen.
+
           </p>
         </div>
 
         </div> {/* end .main-col */}
-        <p className="scrolldown">
-          <a className="smoothscroll" href="#resume"><i className="icon-down-circle" /></a>
-        </p>
     </section>
     )
   }
 }
-
-// <div className="row">
-//
-//   <div className="columns download">
-//     <p>
-//       <a href="#" className="button"><i className="fa fa-download" />Download Resume</a>
-//     </p>
-//   </div>
-// </div> {/* end row */}
-
-// <div id="modal-09" className={`popup-modal ${showImg ? '' : "mfp-hide"}`} height="550px">
-//   <img className="scale-with-grid" src="images/climbing.jpg" alt />
-//   <div className="link-box">
-//     <a className="popup-modal-dismiss" onClick={() => this.setState({ showImg: false })}>Close</a>
-//   </div>
-// </div>{/* modal-03 End */}
 
 export default About;

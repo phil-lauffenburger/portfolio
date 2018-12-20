@@ -37,8 +37,7 @@ body { background: #0f0f0f; }
 
 header {
    position: relative;
-   height: 800px;
-   min-height: 500px;
+   min-height: 100vh;
    width: 100%;
    background: #161415 url(../images/header_back.jpg) no-repeat bottom center;
    background-size: cover !important;
@@ -176,7 +175,7 @@ ul#nav li.current a { color: #F06000; }
 /* ------------------------------------------------------------------ */
 
 #about {
-    background: #2B2B2B url(../images/about_me.jpg) no-repeat center 27%;
+    background: #2B2B2B url(../images/about_me.jpg) no-repeat center 30%;
    padding-top: 96px;
    overflow: hidden;
    height: 100vh;
@@ -196,7 +195,7 @@ ul#nav li.current a { color: #F06000; }
    color: var(--dark-rock);;
 }
 #about .profile-pic {
-    background-image: url(../images/phil_2.jpg);
+    background-image: url(../images/phil.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -205,12 +204,13 @@ ul#nav li.current a { color: #F06000; }
    width: 120px;
    height: 120px;
    border-radius: 100%;
-   transition: filter 1s;
-   filter: grayscale(100%);
+   transition: all 1s;
+   filter: blur(0.2px)
 }
 
 #about .profile-pic:hover {
-    filter: grayscale(0);
+    transform: scale(1.2);
+    filter: blur(0);
 }
 #about .download {
    width: 58.33333%;

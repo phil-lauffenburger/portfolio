@@ -20,6 +20,7 @@ export class SkillBar extends React.Component {
     const { stateSkill, color } = this.state;
     return (
       <li
+        key={name}
         onMouseOver={() => {this.setState({ mouseOver: true }, () => this.inMotion())}}
         onMouseOut={() => this.setState({ mouseOver: false})}
       >

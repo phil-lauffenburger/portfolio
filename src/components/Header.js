@@ -22,7 +22,6 @@ const Header = ({ me }) => (
               and learn more <a className="smoothscroll" href="#about">about me</a> and <a className="smoothscroll" href="#portfolio">my work</a>.</h3>
             <hr />
             <ul className="social">
-              <li><a href="https://www.facebook.com/phil.lauffenburger"><i className="fa fa-facebook" /></a></li>
               <li><a href="https://www.linkedin.com/in/philip-lauffenburger-80380a32/"><i className="fa fa-linkedin" /></a></li>
               <li><a href="https://www.instagram.com/old_man_lauffen/"><i className="fa fa-instagram" /></a></li>
             </ul>

@@ -20,7 +20,7 @@ export const Portfolio = () => (
           <span>moment (Grio Internal Time tracking software [angularjs, rails, mysql])</span>,
           <span>Ewoolutions static concept site <a href='https://protected-plains-5382.herokuapp.com/'>Ewoolutions</a></span>,
           <span>...and an innummerable number of personal/non-published projects (where innummerable ~= 20)</span>,
-        ].map(e => <li className="pull-left first">{e}</li>)}
+        ].map((e, i) => <li className="pull-left first" key={i}>{e}</li>)}
       </ul>
     </div>
     {/* Modal Popup
@@ -121,9 +121,6 @@ export const Portfolio = () => (
         <a className="popup-modal-dismiss">Close</a>
       </div>
     </div>{/* modal-01 End */}
-    <p className="scrolldown">
-      <a className="smoothscroll" href="#contact"><i className="icon-down-circle" /></a>
-    </p>
   </div> {/* row End */}
 
 </section>
