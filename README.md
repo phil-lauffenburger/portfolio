@@ -1,3 +1,7 @@
+Use this repo to make changes to the /lauffenp.github.io repo.
+
+To deploy to stoic-designs.com, use `yarn build`, then copy the contents of the build folder generated into the /lauffenp.github.io repo locally, commit and push to origin master on that repo.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
