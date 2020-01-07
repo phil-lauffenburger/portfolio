@@ -110,14 +110,14 @@ export const Portfolio = () => (
       </div>
     </div>{/* modal-07 End */}
     <div id="modal-08" className="popup-modal mfp-hide">
-      <img className="scale-with-grid" src="images/portfolio/lhdc_2.png" alt />
+      <img className="scale-with-grid" src="images/portfolio/getaround_2.png" alt />
       <div className="description-box">
-        <h4>LHDC</h4>
-        <p>Concept design, with jquery functionality.</p>
-        <span className="categories"><i className="fa fa-tag" />jquery, nodejs, heroku, jquery</span>
+        <h4>Getaround</h4>
+        <p>Car sharing desktop app I did contract work on</p>
+        <span className="categories"><i className="fa fa-tag" />reactjs, flask, angularjs, backbonejs</span>
       </div>
       <div className="link-box">
-        <a href="https://intense-mesa-4525.herokuapp.com">Take a looksie</a>
+        <a href="https://getaround.com">Take it for a spin</a>
         <a className="popup-modal-dismiss">Close</a>
       </div>
     </div>{/* modal-01 End */}

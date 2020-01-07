@@ -46,9 +46,9 @@ const ele = [
       key:'fd'
   },
   {
-    header: 'LHDC site',
-    text: 'Aerospace FSM Showcase Site',
-    url: "images/portfolio/lhdc.png",
+    header: 'Getaround',
+    text: 'Popular Car Sharing App',
+    url: "images/portfolio/getaround.png",
     key: 'l'
   }
 ];

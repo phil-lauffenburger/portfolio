@@ -23,17 +23,14 @@ export class About extends React.Component{
           </p>
         </div>
         <div className="six columns main-col">
-          <h2>About Me</h2>
-          <div className="follow-mountain"/>
-          <ul>
-            <li><a href="#resume">Developer</a></li>
-            <li onClick = {() => this.setState({ showImg: !showImg })}><a>Climber</a></li>
-          </ul>
-          <br/><a className="smoothscroll" href="#contact">Let's Talk</a>
+          <div className="follow-mountain">
+          <h2>About Me >></h2>
           <p className="text-right" style={{pointerEvents: 'none'}}>
-              I am an American living in Innsbruck with my wonderful Norwegian wife. I feel as though I have found paradise. I like finding interesting problems and solving them whether in my personal or professional life.
-              This translates easily to both web development problems, as well as rock climbing. I believe in challenging myself every day.
+              I am an American living in  beautiful Innsbruck with my wonderful Norwegian wife. I like finding interesting problems and solving them whether in my personal or professional life.
+              This translates easily to both web development problems, as well as exploring the mountains around my home. I believe in challenging myself every day.
           </p>
+          <br/><a className="smoothscroll" href="#contact">Let's Talk</a>
+          </div>
         </div>
 
         </div> {/* end .main-col */}

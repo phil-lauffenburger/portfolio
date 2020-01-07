@@ -31,17 +31,21 @@
   }
 }
 
-.follow-mountain {
-  float: left;
-  shape-outside: polygon(0 100px, 0 600px, 0 600px);
-  width: 50vw;
-  height: 600px;
-  transition: shape-outside 1s linear;
-  z-index: 5;
+#about .main-col {
+  height: 80vh;
 }
 
-.follow-mountain:hover {
-  shape-outside: polygon(0 100px, 0 600px, 400px 600px);
+#about .main-col .follow-mountain {
+  float: right;
+  height: 1.5em;
+  transition: height 1s ease-out;
+  z-index: 5;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+#about .main-col .follow-mountain:hover {
+  height: 600px;
 }
 
 span.highlight {
