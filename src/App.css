@@ -64,7 +64,9 @@ span.highlight:hover {
   transition: all 500ms ease-out;
 }
 
-#portfolio-wrapper .columns { margin-bottom: 36px; }
+#portfolio-wrapper .columns {
+  margin-bottom: 36px;
+}
 
 #portfolio-wrapper {
   width: 100%;
@@ -76,31 +78,59 @@ span.highlight:hover {
   position: relative;
   bottom: 50px;
   z-index: 3;
-  }
+}
 
-.scrolldown a i{
+.scrolldown a i {
   color: #fff;
 }
 
-#resume .scrolldown a i{
+#resume .scrolldown a i {
   color: var(--red-rock);
 }
 
-#resume .scrolldown a i:hover { color: var(--star); }
+#resume .scrolldown a i:hover {
+  color: var(--star);
+}
 
 .scrolldown a {
   margin: 0 auto;
 
-   display: block;
-   height: 42px;
-   width: 42px;
-   font-size: 42px;
-   line-height: 42px;
-   border-radius: 100%;
+  display: block;
+  height: 42px;
+  width: 42px;
+  font-size: 42px;
+  line-height: 42px;
+  border-radius: 100%;
 
-   -webkit-transition: all .3s ease-in-out;
-   -moz-transition: all .3s ease-in-out;
-   -o-transition: all .3s ease-in-out;
-   transition: all .3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
-.scrolldown a i:hover { color: var(--star); }
+.scrolldown a i:hover {
+  color: var(--star);
+}
+
+.tui-image-editor-download-btn {
+  display: none !important;
+}
+
+.tui-image-editor-header-logo {
+  display: none !important;
+}
+
+.tie-btn-delete {
+  display: none !important;
+}
+
+.tie-btn-deleteAll {
+  display: none !important;
+}
+
+.tui-image-editor-icpartition {
+  display: none !important;
+}
+
+.tui-image-editor-container .tui-image-editor-help-menu.top {
+  width: 393px;
+}

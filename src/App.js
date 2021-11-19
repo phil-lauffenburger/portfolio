@@ -6,10 +6,12 @@ import Portfolio from './components/Portfolio';
 import Testimonials from  './components/Testimonials';
 import ContactUs from './components/Contact';
 import Footer from './components/Footer';
+import ImageEditor from './components/ImageEditor';
 import './App.css';
 
 import data from './data';
 const components = [
+  <ImageEditor  key="image-editor"/>,
   <Header  key="header"/>,
   <About key="about" />,
   <Resume key="resume" />,
